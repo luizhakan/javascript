@@ -12,4 +12,4 @@ console.log(citacao + meuNome)
 
 console.log(${citacao}${meuNome}, gostou?)
 
-/* teste
+// teste
