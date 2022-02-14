@@ -14,7 +14,7 @@ alert(`${n1} + ${n2} é igual a = ${soma}`)
 
 // + para adição
 // + para concatenação
-// para ser adição, os valores a serem somados tem que ser typeof number
+// para ser adição, os valores a serem somados tem que ser typeof
 // para ser concatenado, os valores tem que ser typeof string!
 // para converter a string para number, usamos o Number(string), e para converter number para string, usamos o String(number)
 
