@@ -21,4 +21,4 @@ console.log(media)
 
 // o forEach permite usar outras funções dentro ou fora dela
 
-// Enquanto o método forEach não tem um retorno, o método map() pode retornar um array se a função informada tiver um return em seu escopo.
+//                                                              Enquanto o método forEach não tem um retorno, o método map() pode retornar um array se a função informada tiver um return em seu escopo.
