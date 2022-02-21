@@ -32,7 +32,3 @@ divisao.push(removerJogador) // aqui eu pego a let divisao e adiciono a let remo
 
 let jogadoresFavoritos = ['Everton Felipe', 'Allan', 'Juba', 'Blas', 'Bufalo']
 jogadoresFavoritos.toString(); // facilmente alterei a array jogadoresFavoritos em string
-
-
-
-
