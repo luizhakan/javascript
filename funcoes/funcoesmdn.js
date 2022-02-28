@@ -1,73 +1,64 @@
 // Declaração/Definição de Função
 // fonte das informações obtidas para esse arquivo : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions
 // Arquivo feito no node, caso queira usar no vscode e não estiver funcionando, recomendo adaptar ao vscode!
-
+/*
+Aqui neste arquivo eu falo de declaração de funções, funções anônimas, escopo de funções, e arrow function
+*/
 /*
 Uma função é feita com uma palavra chave, seguida por :
 1 - Nome da função
 2 - Parâmetros (entre parênteses)
 3 - Ações que ela vai tomar {entre chaves}
 na declaração return, você especifica o valor retornado pela função
-
-exemplo : 
-function square(numero) {
-  return numero * numero;
-}
-
 */
 
-// const numero = 10;
-// console.log(numero)
+// declarando uma função
+function square/*1*/(num/*2*/){
+  // 3
+  return num * num;
+}
+console.log(`Resultado da função é ${square(10)}`)  // neste console eu chamo a função square, e defino o 10 como parâmetro num, resultado é : 100
 
-// function square(numero) /*aqui eu defino minha função e chamo ela de square, em seguida eu defino o parâmetro, qual objeto ela vai manipular dentro dela*/{
-//     return numero * numero;  // aqui eu uso a declaração de retorno para ele me enviar o resultado da multiplicação, para ser o novo valor do parâmetro dentro da função
-// }
+// uma função também pode ser anônima, ou seja, ela não tem que ter um nome para ser declarada
+// exemplo:
+let squad /*(1) na prática esse é o nome da função*/ = function (numero /*(2)*/){
+  // (3)
+  return numero * numero;
+}
+let x = squad(4) // aqui eu chamo a função que está na let squad e adiciono numa let x
+console.log(`O resultado da váriavel x é ${x}`)  // resultado : 16
 
-// console.log(`O resultado dessa função é : ${square(numero)}`)  // aqui eu usei template string pra o código ficar mais legível mesmo
-
-// Outro exemplo :
-
-// function parImpar/*chamada*/(n/*parâmetro*/){
-//     // ação
-//     if (n%2==0)/*Condição*/{
-//         return 'par' // retorno
-//     } else{
-//         return 'ímpar'  // retorno
-//     }
-// }
-
-// let res = parImpar(13)  // aqui eu crio uma variáel pra guardar o resultado da chamada da função que eu criei
-// console.log(res)
-// ou eu posso chamar a função direto do console
-// console.log(parImpar(13))
-
-// no javascript também é possível colocar uma função dentro de uma variável
+// eu posso criar expressões de função, para criar funções anônimas
 // exemplo :
-// let v = function(x){
-//     return 2*x;
-// }
+let fatorial = function fac(n){
+  return n<2 ? 1 : n*fac(n-1);
+}
+// nesta let fatorial eu crio uma função sem precisar declara-la fora, neste caso eu crio ela anonimamente somente para guardar numa variável
+// agora quando eu quiser usar a função, eu só chamo pelo variável e defino um parâmetro
+console.log(fatorial(5 /*aqui eu declaro que meu "n" é igual a 5*/))  // aqui a lógica dentro da let fatorial é : se "n" for menor que 2, então é 1, senão "n" * fac (n - 1)
 
-// console.log(v(3/*parâmetro da function dentro da variável v*/))
+// mesmo já tendo acima, é bom ressaltar como é uma chamada para função
+console.log(square(5)) // aqui eu chamo a função square que está na linha 14 e atribuo um valor ao parâmetro dela!
 
-// function fatorial(n){
-//     let fat = 1;
-//   for(let c = n; c > 1; c--){
-//     fat *= c
-//   }
-//   return fat
-// }
-// console.log(fatorial(5))
-// 5! (o ! significa fatorial) = 5 x 4 x 3 x 2 x 1 = 120
+// variável e função no escopo global
 
-// outro exemplo de função fatorial declarando a função dentro da variável
-// expressão de função
-// let fatorial = function fac(n){
-//   return n < 2? 1 : n*fac(n-1)
-// };
+let num1 = 20,
+    num2 = 3,
+    nome = "xamã";
 
-// console.log(`Luiz, o seu atual saldo bancário é R$${fatorial(170)}!`)  // resultado deve ser 7.257415615307994e+306!
+// esta variável está definida fora do escopo da função, ou seja, ela é uma variável global
 
-// function montadora(carro){
-//   carro.make = "Impala";
-// }
+function multiplica(){
+  // aqui dentro é o escopo da função, onde eu posso criar minhas próprias variáveis!
+  return num1 * num2;  // resultado é 60
+}
+console.log(multiplica(num1, num2))
 
+// aqui temos a criação de uma função usando método comum
+let a = ["Hidrogênio", "Hélio", "Lítio", "Berílio"]
+// let a2 = a.map(function(s){return s.length})
+// console.log(a2)
+
+// aqui temos uma função usando o arrow function
+let a3 = a.map(s => s.length)
+console.log(a3)
